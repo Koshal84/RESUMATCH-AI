@@ -1,0 +1,23 @@
+project:
+  name: RESUMATCH AI
+  version: 0.1.0
+  random_seed: 42
+
+data:
+  canonical_job_columns:
+    - job_id
+    - title
+    - description
+  optional_job_columns:
+    - company
+    - location
+    - skills
+  encoding: utf-8
+
+models:
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  device: cpu
+  batch_size: 16
+
+evaluation:
+  k_values: [1, 3, 5, 10]
